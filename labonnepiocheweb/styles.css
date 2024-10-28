@@ -1,0 +1,151 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e0f7fa;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 30px;
+}
+
+#player-input, #game-area {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#player-input:hover, #game-area:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    color: #004d40;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid #80cbc4;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+button {
+    width: 48%;
+    padding: 14px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin: 10px 1%;
+}
+
+button:hover {
+    background-color: #004d40;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#game-log {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 2px solid #b2dfdb;
+    background-color: #e0f2f1;
+    border-radius: 8px;
+    max-height: auto;
+    overflow-y: auto;
+}
+
+#game-log img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#error-message {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+#playerSelect {
+    margin: 15px 0;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #80cbc4;
+}
+
+details {
+    display: block; 
+    width: fit-content; 
+    margin: 0 auto 30px; 
+    text-align: center; 
+    padding: 15px;
+    border: 2px solid #b2dfdb;
+    border-radius: 8px;
+    background-color: #e0f2f1;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+details:hover {
+    background-color: #b2dfdb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#game-area, #player-input {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    #player-input, #game-area {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

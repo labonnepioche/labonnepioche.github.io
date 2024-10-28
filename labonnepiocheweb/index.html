@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonne Pioche</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="player-input">
+        <h1>Bienvenue dans la Bonne Pioche</h1>
+        <details >
+            <summary>Afficher les règles du jeu</summary>
+            <p> 
+                <strong>Objectif du jeu :</strong> Le but est de s'amuser avec un jeu à boire simple et sympa.<br><br>
+
+                <strong>Déroulement :</strong>
+                <ul>
+                    <li>Les joueurs entrent leur nom un par un.</li>
+                    <li>Chaque joueur, tour à tour, devra deviner la valeur de la carte tirée (entre 1 et 10).</li>
+                    <li>Une fois la valeur entrée, la carte est révélée. </li>
+                    <ul>
+                        <li><strong>Valeur incorrecte</strong> : Si le joueur n'a pas deviné la bonne valeur, le joueur suivant boit une gorgée.</li>
+                        <li><strong>Valeur correcte</strong> : Si le joueur devine correctement, personne ne boit.</li>
+                    </ul>
+                    <li>Attention les têtes ont des actions différente</li>
+                    <ul>
+                        <li><strong>As (1)</strong> : Le joueur choisit une autre personne pour boire à sa place.</li>
+                        <li><strong>Valet (11)</strong> : Changement de sens de jeu.</li>
+                        <li><strong>Dame (12)</strong> : Le joueur suivant ne boit pas.</li>
+                        <li><strong>Roi (13)</strong> : Immunité de 2 tours pour le joueur suivant.</li>
+                        <li><strong>Joker (0)</strong> : Le joueur suivant doit finir son verre.</li>
+                    </ul>
+                </ul>
+        
+                <strong>Fin du jeu :</strong>
+                Le jeu se poursuit jusqu'à épuisement du jeu de cartes ou à la fin souhaitée par les joueurs.
+            </p>
+        </details>
+        
+
+        <h3>Entrez le nombres de joueurs</h3>
+        <label for="playerCount">Nombre de joueurs :</label>
+        <input type="number" id="playerCount" min="2" max="10">
+        <button onclick="setupPlayers()">Valider</button>
+
+        <div id="player-names" style="display: none;">
+            <div id="nameInputs"></div>
+            <p id="nameError" style="color: red;"></p>
+            <button onclick="startGame()">Démarrer le jeu</button>
+        </div>
+    </div>
+
+    <div id="game-area" style="display: none;">
+        <h2 id="currentPlayer"></h2>
+        <div id="game-log"></div>
+
+        <div id="game-controls">
+            <label for="valueInput">Entrez une valeur (1 à 10) :</label>
+            <input type="number" id="valueInput" min="1" max="10">
+            <button onclick="playTurn()">Jouer</button>
+        </div>
+
+        <div id="player-select" style="display: none;">
+            <label for="playerSelect">Choisissez un joueur pour boire à votre place :</label>
+            <select id="playerSelect"></select>
+            <button onclick="choosePlayer()">Choisir</button>
+        </div>
+
+        <button onclick="nextPlayer()">Passer au joueur suivant</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
